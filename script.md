@@ -82,6 +82,8 @@ To be clear, these properties, their types, them being required, is arbitrary. W
 
 Click the floppy disk icon to save since apparently we're still using that icon even though our kids have no idea what a floppy disk is.
 
+(Aside: If you want to demo via CLI, use: `apic create --type model`)
+
 Click back to `All APIs` and into your API set and point out the Cat stuff. Again, this is *all* automatic. I've got end points to create, read, update, and delete cats. Done. Now obviously in the real world I may want to tweak this. Maybe I don't want you deleting cats. I have full control over all of this and can tweak it to my heart's content.
 
 (Optional stuff before going into Run:)
@@ -117,5 +119,19 @@ Now go down to the `GET` operation and run that. You should see the new cat you 
 
 Remind people though that I can use my own tools to test these APIs, like Postman for example.
 
+If you want to test your API outside of the web UI, be sure you use the *Application* URL and not *Micro Gateway*. Basically test with http. 
+
 Manage
 ---
+
+So outside of creating and running APIs, you can also manage your APIs too. Back in designer, you'll notice a Products tab. A "Product" in this context is simply a collection of APIs. You could imagine having 5 APIs but you only want to release 4 in your initial launch. A Product lets you gather those 4 up and release them as one entity. 
+
+You'll see have one product already, named the same as the application. Click on it. 
+
+You'll see various metadata fields (point out Version and Description as possibly interesting things to set). 
+
+Then go to Plans. This is where things get cool. First off, automatically, and you'll see this in a bit, developers will need to subscribe to the product in order to use my APIs. I'll give them an key and APIC will handle validating that key for me. I don't write that code. It's great. Here's where I can tweak the limit. Right now it is 100 per hour. 
+
+You can go back to Explore, click on GET /Cats, and call the operation, and point out how it passes header info back that matches the rate limit. If you click a few times, you'll see your "calls remaining" value decrease.
+
+Again point out that this is all baked in.
