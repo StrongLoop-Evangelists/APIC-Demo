@@ -1,2 +1,111 @@
 Demo Script
 ===
+
+The following script walks you through demonstrating the various aspects of APIC. Because of the time it takes to deploy to BlueMix and have APIC up and running, we will use a shared account with an APIC server already up and running. You should ensure that the API you build follows the script since it will match what is deployed to the running server.
+
+Table of Contents
+---
+
+TBD
+
+What is APIC?
+---
+
+(*Intro to APIC, feel free to ignore/change/etc.*)
+
+At a high level, APIC is a gateway for your APIs. It handles creating your API. It handles running your API. It handles managing access to your APIs, doing things like requiring you to sign up first and use a key. It handles checking that key and rate limiting it. It handles analytics for your API. And more. The important thing is that *your* API stays nice and simple and APIC handles the management.
+
+APIC supports Node and Java-based APIs and has a generous free tier.
+
+Installation
+---
+
+(*Obviously not done live, but useful to let folks we use npm!*)
+
+Just do: `npm install -g apiconnect`
+
+This installs the toolkit where you can create your APIs, set up access, etc. You then deploy this to either an APIC server on prem or one running on IBM Bluemix. 
+
+Remember that APIC works with Java. If you aren't a Node person, that's ok. But learn Node. Seriously.
+
+You can then test the CLI by typing: `apic`
+
+Create
+---
+
+We're going to begin by creating a LoopBack application with the CLI.
+
+    apic loopback
+
+For the name, use the date and hour to ensure you get a good unique name: `june79am` for ex.
+
+Select "notes" so you get an IMD db and an API (Notes) out of the box.
+
+Change into the directory.
+
+Start up the toolkit: `apic edit`
+
+In the browser, login to Bluemix (and cross your fingers). Note the URL (should be 127.0.0.1:9000) as sometimes when you login to BM it doesn't bring you back to where you were.
+
+Note - I think the designer remembers your last tab, so you may not start off in the best place. Click `APIs` if not selected.
+
+Click the name of your APIs (which will be the same as your app name).
+
+What you see here is a default set of APIs we got because we chose a sample application at the CLI. 
+
+Click `/Notes`
+
+As an example, here we can see a path, slash Notes, and various HTTP methods associated with working with Notes. (Scroll down to GET) That includes, obviously, fetching a list of notes. All of these various paths and operations come out of the box. Let's look at how this is defined.
+
+Click `All APIs` and then `Models`. 
+
+When you create APIs with APIC, you're using a model-centric framework called LoopBack. That's an open source Node.js framework designed for easy API creation. LoopBack uses a simple "model" system where you describe your data and it does all the rest.
+
+Click `Note`
+
+This is the Note model. It's got 2 properties, `content` and `title`. We can define a type, whether or not it is required, and other bits of metadata. The point is - from this simple description we got all of those various API end points out of the box. Let's build a new mode.
+
+Click `All Models`
+Click `Add`
+
+We're going to call our model "Cat". 
+
+And we'll give it a few properties:
+    
+    name (string, required)
+    breed (string, required)
+    age (string, required)
+
+(Use required as it makes testing a bit easier later.) 
+
+To be clear, these properties, their types, them being required, is arbitrary. Whatever your business needs are, you can just define what makes sense. And everything I've done here in this pretty web UI can also be done at the CLI as well. Use whatever you're most comfortable with.
+
+Click the floppy disk icon to save since apparently we're still using that icon even though our kids have no idea what a floppy disk is.
+
+Click back to `All APIs` and into your API set and point out the Cat stuff. Again, this is *all* automatic. I've got end points to create, read, update, and delete cats. Done. Now obviously in the real world I may want to tweak this. Maybe I don't want you deleting cats. I have full control over all of this and can tweak it to my heart's content.
+
+(Optional stuff before going into Run:)
+In case your curious, our data can be persisted in any number of storage systems (MySql, Oracle, Cloudant, Mongo, etc). LoopBack, and APIC, have a real basic ORM built in to handle persistence. Out of the box, it uses a RAM-based system. This is great for prototyping as you don't have to set up anything yet.
+
+Run
+---
+
+So let's talk about running and testing this. First thing I'll do is actually start the server. Again, I can do this from the command line, and it even told me what to do (`apic start`), but I can click the little play button on the bottom here too.
+
+Click play. Give it a moment. Click application
+
+This is the API server we created. It's a LoopBack app and all your seeing here (it's a timestamp) is a default home page showing when the app started and how long it's been up. You can modify that later of course. If I wanted to, I could test my APIs by typing them in here. But instead, we'll use the APIC Designer instead. 
+
+Go back to the APIC tab and click Explore. What you have is an interactive testing tool for *all* of your APIs. Every API lets you test it, helps create sample data to use with your testing, and even shows you a CURL command if you want to test outside of the web page.
+
+Scroll to `POST /Cats`
+
+So here is how we make a new cat. This is a standard REST-based API so we do that by sending a POST request to Cats with our data. 
+
+Scroll down to Generate and click it. This is random data based on the cat model we defined. (It isn't obvious, but you can click to edit.) Go ahead and change the name. You must name your cat Mr. Wafflepants. It's crucial.
+
+Click `Call operation`
+
+*** VERY IMPORTANT NOTE ***
+
+One of two things will happen. If you see a good result, awesome. Move on. If you see: `Code: -1` and some BS text about a certificate issue, yeah, you have to do a one time operation to tell your browser to accept the temp cert. Click the link it tells you to. Depending on your browser, you will need to tell it to go on and run the URL even though it is bad. You then get a new error: `PreFlowError`.  
