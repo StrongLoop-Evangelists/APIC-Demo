@@ -108,4 +108,4 @@ Click `Call operation`
 
 *** VERY IMPORTANT NOTE ***
 
-One of two things will happen. If you see a good result, awesome. Move on. If you see: `Code: -1` and some BS text about a certificate issue, yeah, you have to do a one time operation to tell your browser to accept the temp cert. Click the link it tells you to. Depending on your browser, you will need to tell it to go on and run the URL even though it is bad. You then get a new error: `PreFlowError`.  
+One of two things will happen. If you see a good result, awesome. Move on. If you see: `Code: -1` and some BS text about a certificate issue, yeah, you have to do a one time operation to tell your browser to accept the temp cert. Click the link it tells you to. Depending on your browser, you will need to tell it to go on and run the URL even though it is bad. You then get a new error: `PreFlowError`. That's actually good. Go back to the tab, and try it again. The good news is that now you may get another bug. If you run `Call operation` again and see this: https://$(catalog.host)/api/Cats 
