@@ -7,12 +7,17 @@ Also ensure you have a valid Bluemix account.
 
 ## Table of Contents
 ---
-[What is APIC?](###What is APIC?)
-[Installation](###Installation)
-[Create](###Create)
-[Run](###Run)
-[Manage](###Manage)
-[To-Do](###To-Do)
+[What is APIC?](#what-is-APIC?)
+
+[Installation](#installation)
+
+[Create](#create)
+
+[Run](#run)
+
+[Manage](#manage)
+
+[To-Do](#to-do)
 
 ###What is APIC?
 ---
