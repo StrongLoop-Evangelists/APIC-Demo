@@ -8,6 +8,11 @@ Also ensure you have a valid Bluemix account.
 ## Table of Contents
 ---
 [What is APIC?](###What is APIC?)
+[Installation](###Installation)
+[Create](###Create)
+[Run](###Run)
+[Manage](###Manage)
+[To-Do](###To-Do)
 
 ###What is APIC?
 ---
@@ -18,7 +23,7 @@ At a high level, APIC is a gateway for your APIs. It handles creating your API. 
 
 APIC supports Node and Java-based APIs and has a generous free tier.
 
-### Installation
+###Installation
 ---
 
 (*Obviously not done live, but useful to let folks we use npm!*)
@@ -31,7 +36,7 @@ Remember that APIC works with Java. If you aren't a Node person, that's ok. But 
 
 You can then test the CLI by typing: `apic`
 
-### Create
+###Create
 ---
 
 We're going to begin by creating a LoopBack application with the CLI.
@@ -101,7 +106,7 @@ Click back to `All APIs` and into your API set and point out the Cat stuff. Agai
 (Optional stuff before going into Run:)
 In case your curious, our data can be persisted in any number of storage systems (MySql, Oracle, Cloudant, Mongo, etc). LoopBack, and APIC, have a real basic ORM built in to handle persistence. Out of the box, it uses a RAM-based system. This is great for prototyping as you don't have to set up anything yet.
 
-### Run
+###Run
 ---
 
 So let's talk about running and testing this. First thing I'll do is actually start the server. Again, I can do this from the command line, and it even told me what to do (`apic start`), but I can click the little play button on the bottom here too.
@@ -135,7 +140,7 @@ Remind people though that I can use my own tools to test these APIs, like Postma
 
 If you want to test your API outside of the web UI, be sure you use the *Application* URL and not *Micro Gateway*. Basically test with http. 
 
-### Manage
+###Manage
 ---
 
 So outside of creating and running APIs, you can also manage your APIs too. Back in designer, you'll notice a Products tab. A "Product" in this context is simply a collection of APIs. You could imagine having 5 APIs but you only want to release 4 in your initial launch. A Product lets you gather those 4 up and release them as one entity. 
@@ -150,7 +155,7 @@ You can go back to Explore, click on GET /Cats, and call the operation, and poin
 
 Again point out that this is all baked in.
 
-### ToDo:
+###ToDo:
 Leaving a note for myself on what I want to add next to this doc - I'll remove this later, but it gives you an idea of how I see this document moving on/wrapping up:
 
 * Go to the Dev Portal (this will be installed already on the shared server Joe is setting up)
