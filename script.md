@@ -3,6 +3,8 @@ Demo Script
 
 The following script walks you through demonstrating the various aspects of APIC. Because of the time it takes to deploy to BlueMix and have APIC up and running, we will use a shared account with an APIC server already up and running. You should ensure that the API you build follows the script since it will match what is deployed to the running server.
 
+Also ensure you have a valid Bluemix account.
+
 Table of Contents
 ---
 
@@ -94,7 +96,7 @@ Run
 
 So let's talk about running and testing this. First thing I'll do is actually start the server. Again, I can do this from the command line, and it even told me what to do (`apic start`), but I can click the little play button on the bottom here too.
 
-Click play. Give it a moment. Click application
+Click play. Give it a moment. Click application.
 
 This is the API server we created. It's a LoopBack app and all your seeing here (it's a timestamp) is a default home page showing when the app started and how long it's been up. You can modify that later of course. If I wanted to, I could test my APIs by typing them in here. But instead, we'll use the APIC Designer instead. 
 
