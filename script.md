@@ -107,9 +107,9 @@ Run
 
 So let's talk about running and testing this. First thing I'll do is actually start the server. Again, I can do this from the command line, and it even told me what to do (`apic start`), but I can click the little play button on the bottom here too.
 
-Click play. Give it a moment. Click application.
+Click play. Give it a moment. Click on the "Application" url in the bottom bar (it'll be something like 'http://127.0.0.1:4001/', and will open up a new browser tab.
 
-This is the API server we created. It's a LoopBack app and all your seeing here (it's a timestamp) is a default home page showing when the app started and how long it's been up. You can modify that later of course. If I wanted to, I could test my APIs by typing them in here. But instead, we'll use the APIC Designer instead. 
+This is the API server we created. It's a LoopBack app and all your seeing here (it's a timestamp) is a default home page showing when the app started and how long it's been up. (You should see something like "{"started":"2016-10-28T20:39:56.379Z","uptime":202.198}".) You can modify that later of course. If I wanted to, I could test my APIs by typing them in here. But instead, we'll use the APIC Designer instead. 
 
 Go back to the APIC tab and click Explore. What you have is an interactive testing tool for *all* of your APIs. Every API lets you test it, helps create sample data to use with your testing, and even shows you a CURL command if you want to test outside of the web page.
 
