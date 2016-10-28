@@ -139,3 +139,12 @@ Then go to Plans. This is where things get cool. First off, automatically, and y
 You can go back to Explore, click on GET /Cats, and call the operation, and point out how it passes header info back that matches the rate limit. If you click a few times, you'll see your "calls remaining" value decrease.
 
 Again point out that this is all baked in.
+
+ToDo:
+Leaving a note for myself on what I want to add next to this doc - I'll remove this later, but it gives you an idea of how I see this document moving on/wrapping up:
+
+* Go to the Dev Portal (this will be installed already on the shared server Joe is setting up)
+* Show signing up to get API access (don't forget you can use throw away gmail aliases like raymondcamden+testsomething@gmail.com)
+* Show the docs and subscribing to a product to get APIs
+* Show the *Admin* portion of the portal so you can show stats.
+
