@@ -39,6 +39,17 @@ We're going to begin by creating a LoopBack application with the CLI.
 
     apic loopback
 
+You may be asked to accept a license file: 
+
+~~~~
+➔ apic loopback
+? Please review the license for API Connect available in $PATH and select yes to accept. (Use arrow keys)
+❯ yes 
+  no 
+~~~~     
+
+Where $PATH is the directory you were in when you installed apiconnect. Please accept this license to continue. If you do not see the license prompt, or do not see the license file, you can find it in the apiconnect folder where your node modules are installed (try npm list -g to see where they are installed).    
+
 For the name, use the date and hour to ensure you get a good unique name: `june79am` for ex.
 
 Select "notes" so you get an IMD db and an API (Notes) out of the box.
